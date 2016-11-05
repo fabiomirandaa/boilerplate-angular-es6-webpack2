@@ -1,5 +1,5 @@
 class HomeController {
-    constructor($http, $location, $scope) {
+    constructor($http, $scope) {
         this._$http = $http;
         this._$scope = $scope;
     }
@@ -7,7 +7,7 @@ class HomeController {
 
 }
 
-HomeController.$inject = ['$http', '$location', '$scope'];
+HomeController.$inject = ['$http', '$scope'];
 
 console.log('Entrou de HomeController');
 export { HomeController };
