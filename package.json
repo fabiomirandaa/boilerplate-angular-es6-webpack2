@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "Boilerplate Angular ES2015",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -32,8 +32,6 @@
     "angular": "^1.5.8",
     "angular-socket-io": "^0.7.0",
     "angular-ui-router": "^1.0.0-beta.2",
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.6.3",
-    "socket.io-client": "^1.4.8"
+    "bootstrap": "^3.3.7"
   }
 }
