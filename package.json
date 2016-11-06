@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.lab21k.com.br:PhoenixProject/frontend.git"
+    "url": "https://github.com/fabiomirandaa/boilerplate-angular-es2015"
   },
-  "author": "",
+  "author": "Fábio Miranda",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.14.0",
