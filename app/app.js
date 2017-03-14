@@ -1,5 +1,4 @@
-import 'angular';
-import 'angular-ui-router';
+import './angular-entry.js';
 
 import './components/home/home.view.html';
 import './styles/main.styl';
