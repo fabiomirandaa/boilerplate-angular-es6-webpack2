@@ -9,5 +9,4 @@ class HomeController {
 
 HomeController.$inject = ['$http', '$scope'];
 
-console.log('Entrou de HomeController');
 export { HomeController };

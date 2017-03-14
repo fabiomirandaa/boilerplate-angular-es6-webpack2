@@ -5,11 +5,10 @@ class Router {
             $stateProvider
                 .state('main', {
                     url: '',
-                    templateUrl: 'app/components/home/home.view.html',
+                    templateUrl: 'components/home/home.view.html',
                     controller: 'HomeController as ctrl'
                 })
                 });
         }
     }
-
 export { Router };
