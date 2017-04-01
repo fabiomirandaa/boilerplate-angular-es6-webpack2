@@ -1,3 +1,6 @@
+import './home.view.html';
+import '../../images/coringa.jpg';
+
 class HomeController {
     constructor($http, $scope) {
         this._$http = $http;
