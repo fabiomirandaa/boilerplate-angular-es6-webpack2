@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fabiomirandaa/boilerplate-angular-es2015"
+    "url": "https://github.com/fabiomirandaa/boilerplate-angular-es6-webpack2"
   },
   "author": "Fábio Miranda",
   "license": "ISC",
