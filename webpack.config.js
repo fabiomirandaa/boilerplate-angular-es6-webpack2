@@ -1,13 +1,12 @@
 var webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     HtmlWebPackPlugin = require('html-webpack-plugin'),
-    ngAnnotatePlugin = require('ng-annotate-webpack-plugin'),
     path = require('path');
 
 module.exports = {
     entry: {
         app: './app/app.js',
-        vendor: ['angular', 'angular-ui-router']
+        vendor: './app/vendor.js'
     },
 
     output: {
@@ -20,7 +19,8 @@ module.exports = {
         }),
         new HtmlWebPackPlugin({
             template: 'index.html'
-        })
+        }),
+        new ExtractTextPlugin('bundle.css')
     ],
     module: {
         rules: [{
@@ -52,6 +52,15 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
+            },
+            {
+                test: /\.(png|jpeg|jpg|gif)$/,
+                include: path.join(__dirname, 'app/images/'),
+                use: 'file-loader?name=images/[name].[ext]&context=app/images/'
+              },
+            {
+                test: /\.(woff|woff2|svg|eot|ttf)(\?.+)?$/i,
+                use: 'file-loader?name=[name].[ext]'
             }
         ]
     },
