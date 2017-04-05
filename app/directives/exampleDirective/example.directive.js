@@ -10,6 +10,7 @@ export default class ExampleDirective {
   compile () {}
   link (scope, elm, attrs, ngModelController) {}
 }
+
 class ExampleDirectiveController {
   constructor ($scope) {
     this._$scope = $scope
@@ -19,4 +20,5 @@ class ExampleDirectiveController {
     this._$scope.title = 'Example Directive'
   }
 }
+
 ExampleDirectiveController.$inject = ['$scope']
