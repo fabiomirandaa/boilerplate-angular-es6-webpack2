@@ -1,4 +1,6 @@
-var webpack = require('webpack'),
+"use strict";
+
+let webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin'),
     HtmlWebPackPlugin = require('html-webpack-plugin'),
     path = require('path');
