@@ -13,6 +13,9 @@
     "url": "https://github.com/fabiomirandaa/boilerplate-angular-es6-webpack2"
   },
   "author": "Fábio Miranda",
+  "contributors": [
+    "Felipe Leão <felipe@felipeleao.com> (http://felipeleao.com/)"
+  ],
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.24.1",
