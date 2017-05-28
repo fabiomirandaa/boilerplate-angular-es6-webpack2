@@ -1,7 +1,7 @@
 let webpack = require('webpack'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    HtmlWebPackPlugin = require('html-webpack-plugin'),
-    path = require('path');
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  HtmlWebPackPlugin = require('html-webpack-plugin'),
+  path = require('path')
 
 module.exports = {
   entry: {
@@ -20,7 +20,11 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: 'index.html'
     }),
-    new ExtractTextPlugin('bundle.css')
+    new ExtractTextPlugin({
+      filename: 'bundle.css',
+      disable: false,
+      allChunks: true
+    })
   ],
   module: {
     rules: [{
@@ -40,11 +44,19 @@ module.exports = {
       },
       {
         test: /\.styl$/,
-        loaders: ['style-loader', 'css-loader', 'stylus-loader']
+        use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'stylus-loader'],
+            publicPath: '/dist'
+        })
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+          publicPath: '/dist'
+        })
       },
       {
         test: /\.(png|jpeg|jpg|gif)$/,
