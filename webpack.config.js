@@ -35,19 +35,19 @@ module.exports = {
       {
         test: /\index.html$/,
         exclude: path.resolve(__dirname, 'node_modules/'),
-        loader: 'html-loader?name=[name].[ext]'
+        use: 'html-loader?name=[name].[ext]'
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: ['css-loader', 'stylus-loader'],
-            publicPath: '/dist'
+          fallback: 'style-loader',
+          use: ['css-loader?sourceMap', 'stylus-loader?sourceMap'],
+          publicPath: '/dist'
         })
       },
       {
