@@ -30,7 +30,7 @@ import './home.view.html'; // Import view template in the controller making a co
 
 export class HomeController { // Export Controller to use in app.js and router.js
     constructor($http, $scope) {
-        'ngInject' // Injection dependencies in Class
+        'ngInject' // Dependencies injection
 
         this._$http = $http
         this._$scope = $scope
@@ -42,7 +42,7 @@ export class HomeController { // Export Controller to use in app.js and router.j
 ```
 export class UserService { // Export Service to use in app.js or Controllers
     constructor($http) {
-        'ngInject' // Injection dependencies in Class
+        'ngInject' // Dependencies injection
 
         this._$http = $http
     }
@@ -62,7 +62,7 @@ Directives are a little more complicated because the Angular needs an literal ob
 ```
 export class ExampleDirective { // Export Directive to use in app.js
   constructor () {
-    'ngInject' // Injection dependencies in Class
+    'ngInject' // Dependencies injection
 
     this.templateUrl = 'directives/exampleDirective/example.view.html'
     this.restrict = 'E'
