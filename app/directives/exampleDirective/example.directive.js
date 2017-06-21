@@ -1,24 +1,35 @@
-export default class ExampleDirective {
+import './example.view.html'
+
+export class ExampleDirective {
   constructor () {
+    'ngInject'
+
     this.templateUrl = 'directives/exampleDirective/example.view.html'
     this.restrict = 'E'
-    this.scope = {}
-    this.controller = ExampleDirectiveController
     this.controllerAs = 'ctrl'
-    this.bindToController = true
-  }
-  compile () {}
-  link (scope, elm, attrs, ngModelController) {}
-}
+    this.scope = {
+      title: '@'
+    }
 
-class ExampleDirectiveController {
-  constructor ($scope) {
-    this._$scope = $scope
     this.setTitle()
   }
-  setTitle () {
-    this._$scope.title = 'Example Directive'
+
+  // optional compile function
+  compile (tElement) {
+    tElement.css('position', 'relative')
+  }
+
+  // optional link function
+  link (scope, element) {
+    this.$interval(() => this.move(element), 1000)
+  }
+
+  setTitle (title) {
+    this.title = title
+  }
+
+  move (element) {
+    element.css('left', (Math.random() * 500) + 'px')
+    element.css('top', (Math.random() * 500) + 'px')
   }
 }
-
-ExampleDirectiveController.$inject = ['$scope']
