@@ -1,4 +1,5 @@
 import './example.view.html'
+import './example.style.styl'
 
 export class ExampleDirective {
   constructor () {
