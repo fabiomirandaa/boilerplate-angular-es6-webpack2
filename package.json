@@ -36,6 +36,10 @@
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.5",
-    "angular": "^1.6.3"
+    "angular": "^1.6.3",
+    "angular-ui-router": "^0.4.3",
+    "dotenv": "^4.0.0",
+    "dotenv-webpack": "^1.5.4",
+    "postcss-loader": "^2.0.7"
   }
 }
