@@ -1,7 +1,8 @@
-let webpack = require('webpack')
-let ExtractTextPlugin = require('extract-text-webpack-plugin')
-let HtmlWebPackPlugin = require('html-webpack-plugin')
-let path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const dotEnv = require('dotenv-webpack')
+const path = require('path')
 
 module.exports = {
   entry: {
@@ -24,6 +25,10 @@ module.exports = {
       filename: 'bundle.css',
       disable: false,
       allChunks: true
+    }),
+    new dotEnv({
+      path: './.env',
+      systemvars: true
     })
   ],
   module: {
@@ -32,7 +37,7 @@ module.exports = {
       include: path.resolve(__dirname, 'app/'),
       loader: `ngtemplate-loader?relativeTo=${__dirname}/app/!html-loader`
     }, {
-      test: /\index.html$/,
+      test: /index.html$/,
       exclude: path.resolve(__dirname, 'node_modules/'),
       use: 'html-loader?name=[name].[ext]'
     }, {
@@ -43,14 +48,14 @@ module.exports = {
       test: /\.styl$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: ['css-loader?sourceMap', 'stylus-loader?sourceMap'],
+        use: ['css-loader?sourceMap', 'postcss-loader?sourceMap', 'stylus-loader?sourceMap'],
         publicPath: '/dist'
       })
     }, {
       test: /\.css$/,
       use: ExtractTextPlugin.extract({
         fallback: 'style-loader',
-        use: 'css-loader',
+        use: ['css-loader', 'postcss-loader?sourceMap'],
         publicPath: '/dist'
       })
     }, {

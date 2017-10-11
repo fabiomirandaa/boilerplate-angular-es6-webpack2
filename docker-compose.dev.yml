@@ -1,0 +1,11 @@
+version: '2'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: bash -c "webpack --watch --watch-poll && webpack-dev-server --host 0.0.0.0 --port 80 --content-base ./dist"
+    ports:
+      - "80:80"
+    volumes:
+      - $PWD:/usr/src/app

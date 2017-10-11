@@ -1,4 +1,5 @@
 import './home.view.html'
+import './home.style.styl'
 import '../../images/coringa.jpg'
 
 export class HomeController {
@@ -8,5 +9,4 @@ export class HomeController {
     this._$http = $http
     this._$scope = $scope
   }
-
 }

@@ -1,0 +1,10 @@
+version: '2'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    volumes:
+      dist:/usr/src/app/dist
+volumes:
+  dist:
