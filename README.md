@@ -54,7 +54,6 @@ export class UserService { // Export Service to use in app.js or Controllers
 }
 ```
 
-
 ### Directives
 
 Directives are a little more complicated because the Angular needs an literal object, different from the controller and service that create constructor function
@@ -97,3 +96,8 @@ export class ExampleDirective { // Export Directive to use in app.js
 
 }
 ```
+
+### Docker Support
+
+You can use it in development or production. There are 2 different `docker-compose.yml` files for
+each environment. When running point to the desired file and have fun.
